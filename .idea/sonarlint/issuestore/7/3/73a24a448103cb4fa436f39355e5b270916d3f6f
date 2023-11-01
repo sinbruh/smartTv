@@ -1,0 +1,17 @@
+
+f
+java:S2259N"KA "NullPointerException" could be thrown; "clientCommand" is nullable here.(±îH8¿ş×Ã²1
+V
+java:S1128
+"9Remove this unused import 'no.ntnu.message.ErrorMessage'.(ÁŒş–8Í¢ØÃ²1
+[
+java:S1068"9Remove this unused "CHANNEL_COUNT_COMMAND" private field.(ÿ²Üåúÿÿÿÿ8¶µáÁ²1
+O
+java:S1068"3Remove this unused "TURN_ON_COMMAND" private field.(Şßú
+8ÏîÁ²1
+Q
+java:S1068"4Remove this unused "TURN_OFF_COMMAND" private field.(øÍÆ8¶µáÁ²1
+Y
+java:S1068"7Remove this unused "SET_CHANNEL_COMMAND" private field.( ıİ”üÿÿÿÿ8¶µáÁ²1
+a
+java:S1068"?Remove this unused "GET_CURRENT_CHANNEL_COMMAND" private field.(ßŸã•øÿÿÿÿ8·µáÁ²1
