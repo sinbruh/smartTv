@@ -1,6 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-import no.ntnu.TvLogic;
+import no.ntnu.server.TvLogic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

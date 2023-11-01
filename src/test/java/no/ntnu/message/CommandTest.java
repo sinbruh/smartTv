@@ -2,7 +2,9 @@ package no.ntnu.message;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import no.ntnu.TvLogic;
+import no.ntnu.server.TvLogic;
+import no.ntnu.message.command.ChannelCountCommand;
+import no.ntnu.message.command.TurnOnCommand;
 import org.junit.jupiter.api.Test;
 
 class CommandTest {

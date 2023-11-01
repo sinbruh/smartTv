@@ -1,5 +1,11 @@
 package no.ntnu.message;
 
+import no.ntnu.message.command.ChannelCountCommand;
+import no.ntnu.message.command.CurrentChannelCommand;
+import no.ntnu.message.command.SetCurrentChannelCommand;
+import no.ntnu.message.command.TurnOffCommand;
+import no.ntnu.message.command.TurnOnCommand;
+
 public class MessageSerializer {
   /**
    * Create message from a string, according to the communication protocol.
