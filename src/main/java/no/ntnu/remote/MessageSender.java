@@ -25,8 +25,7 @@ public class MessageSender extends Thread {
     }
   }
 
-  private void commandLineLoop(PrintWriter socketWriter)
-      throws IOException {
+  private void commandLineLoop(PrintWriter socketWriter) {
     System.out.println("Command line has started. Type \"help\" for a list of commands");
 
     boolean running = true;

@@ -50,7 +50,7 @@ public class TvServer {
             .println(MessageSerializer.toString(response));
         System.out.println("Sent response to " + client.getRemoteSocketAddress());
       } catch (IOException e) {
-        throw new RuntimeException(e);
+        System.err.println("IOException" + e.getMessage());
       }
     }
   }

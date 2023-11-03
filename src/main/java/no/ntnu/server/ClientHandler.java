@@ -59,6 +59,11 @@ public class ClientHandler extends Thread {
     Message response;
     do {
       Command clientCommand = readClientRequest();
+
+      if (clientCommand == null) {
+        break;
+      }
+
       System.out.println("Received from client: " + clientCommand);
       try {
         response = clientCommand.execute(tvLogic);
