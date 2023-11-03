@@ -4,22 +4,25 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import no.ntnu.message.command.Command;
 import no.ntnu.message.ErrorMessage;
 import no.ntnu.message.Message;
 import no.ntnu.message.MessageSerializer;
+import no.ntnu.message.command.Command;
 
+/**
+ * Handles communicating with clients.
+ */
 public class ClientHandler extends Thread {
   private BufferedReader socketReader;
-  private TvLogic tvLogic;
-  private Socket socket;
-  private TvServer tvServer;
+  private final TvLogic tvLogic;
+  private final Socket socket;
+  private final TvServer tvServer;
 
   /**
    * Handles one client on its own thread.
    *
-   * @param socket The socket that the client is connected to.
-   * @param logic The tv logic.
+   * @param socket   The socket that the client is connected to.
+   * @param logic    The tv logic.
    * @param tvServer The tv server.
    */
   public ClientHandler(Socket socket, TvLogic logic, TvServer tvServer) {
