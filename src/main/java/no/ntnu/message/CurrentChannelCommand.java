@@ -1,6 +1,6 @@
 package no.ntnu.message;
 
-import no.ntnu.server.TvLogic
+import no.ntnu.server.TvLogic;
 
 public class CurrentChannelCommand extends Command {
   @Override

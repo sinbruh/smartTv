@@ -3,7 +3,6 @@ package no.ntnu.server;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.Socket;
 import no.ntnu.message.command.Command;
 import no.ntnu.message.ErrorMessage;
@@ -12,11 +11,17 @@ import no.ntnu.message.MessageSerializer;
 
 public class ClientHandler extends Thread {
   private BufferedReader socketReader;
-  private PrintWriter socketWriter;
   private TvLogic tvLogic;
   private Socket socket;
   private TvServer tvServer;
 
+  /**
+   * Handles one client on its own thread.
+   *
+   * @param socket The socket that the client is connected to.
+   * @param logic The tv logic.
+   * @param tvServer The tv server.
+   */
   public ClientHandler(Socket socket, TvLogic logic, TvServer tvServer) {
     tvLogic = logic;
     this.socket = socket;
@@ -24,11 +29,15 @@ public class ClientHandler extends Thread {
     initializeStreams();
   }
 
-  public boolean initializeStreams() {
+  /**
+   * Initializes the input stream.
+   *
+   * @return true if the input stream was successfully created.
+   */
+  private boolean initializeStreams() {
     boolean success = true;
     try {
       socketReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-      socketWriter = new PrintWriter(socket.getOutputStream(), true);
     } catch (IOException e) {
       success = false;
       System.err.println("Could not initialize streams");

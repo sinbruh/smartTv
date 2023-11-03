@@ -1,11 +1,15 @@
 package no.ntnu.remote;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
+/**
+ * The message sender logic for the remote control. Will be instanced in a new thread whenever a
+ * remote control is created. This class has methods for user input (in the command line) as well
+ * as converting and sending the message to the server.
+ */
 public class MessageSender extends Thread {
   private Socket socket;
   public MessageSender(Socket socket) {
@@ -15,7 +19,7 @@ public class MessageSender extends Thread {
   @Override
   public synchronized void run() {
     try {
-      commandLineLoop(new PrintWriter(socket.getOutputStream()));
+      commandLineLoop(new PrintWriter(socket.getOutputStream(), true));
     } catch (IOException e) {
       System.err.println("could not initialize stream");
     }
@@ -43,7 +47,6 @@ public class MessageSender extends Thread {
           System.out.println("exit - quit the program");
         } else {
           socketWriter.println(command);
-          socketWriter.flush();
         }
       }
     }

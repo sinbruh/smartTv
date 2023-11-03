@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
+/**
+ * The message receiving logic for the remote control. The purpose of the class is to receive
+ * messages from the tv server, convert them to a readable format for the user and printing it
+ * to the command line. This object will be instiantiated in a new thread whenever a remote is
+ * created.
+ */
 public class MessageReciever extends Thread {
   BufferedReader socketReader;
   public MessageReciever(Socket socket) {
